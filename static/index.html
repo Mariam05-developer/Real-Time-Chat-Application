@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chat App</title>
+  <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+
+  <!-- login / register screen -->
+  <div id="login-page">
+    <h1>Chat App</h1>
+    <form id="login-form">
+      <input id="username" placeholder="Username" autocomplete="username" required>
+      <input id="password" type="password" placeholder="Password" autocomplete="current-password" required>
+      <button type="submit">Log in</button>
+      <button type="button" id="register-button">Register</button>
+    </form>
+    <p id="login-error" class="error"></p>
+  </div>
+
+  <!-- main chat screen -->
+  <div id="chat-page" class="hidden">
+    <div id="sidebar">
+      <div class="top-bar">
+        <strong id="my-name"></strong>
+        <button id="logout-button">Log out</button>
+      </div>
+
+      <h3>Conversations</h3>
+      <ul id="conversation-list"></ul>
+
+      <h3>People</h3>
+      <ul id="user-list"></ul>
+
+      <h3>New group</h3>
+      <form id="group-form">
+        <input id="group-name" placeholder="Group name" maxlength="50">
+        <p class="small">Tick people in the list above, then press Create.</p>
+        <button type="submit">Create</button>
+      </form>
+      <p id="sidebar-error" class="error"></p>
+    </div>
+
+    <div id="chat-area">
+      <p id="no-chat">Pick a conversation or click a person to start chatting.</p>
+
+      <div id="chat" class="hidden">
+        <div class="top-bar">
+          <div>
+            <strong id="chat-title"></strong>
+            <div id="chat-status" class="small"></div>
+          </div>
+          <div id="group-controls" class="hidden">
+            <select id="add-select"></select>
+            <button id="add-button">Add</button>
+            <button id="leave-button">Leave</button>
+          </div>
+        </div>
+
+        <div id="messages"></div>
+        <div id="typing" class="small"></div>
+
+        <form id="message-form">
+          <input id="message-input" placeholder="Type a message..." maxlength="2000" autocomplete="off">
+          <button type="submit">Send</button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <script src="/static/script.js"></script>
+</body>
+</html>
